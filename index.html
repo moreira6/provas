@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7651a8">
+  <title>Provas | Espaço de estudos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" id="homeLink" aria-label="Página inicial Provas">
+      <span class="brand-mark">P</span><span>provas<span class="brand-dot">.</span></span>
+    </a>
+    <nav aria-label="Navegação principal">
+      <button class="nav-link active" id="navHome">Início</button>
+      <button class="nav-link" id="navSummaries">Meus resumos</button>
+      <button class="nav-link" id="navActivities">Atividades</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="homeView" class="view">
+      <div class="hero">
+        <div>
+          <p class="eyebrow">SEU ESPAÇO DE APRENDIZAGEM</p>
+          <h1>Estudar fica mais leve<br><span>quando tudo está organizado.</span></h1>
+          <p class="hero-copy">Escolha uma matéria para acessar seus resumos e praticar com atividades.</p>
+        </div>
+        <div class="hero-decoration" aria-hidden="true"><span>✳</span><i>✦</i><b>✧</b></div>
+      </div>
+      <div class="section-heading">
+        <div><p class="eyebrow">SUAS DISCIPLINAS</p><h2>Por onde vamos começar?</h2></div>
+        <span class="subject-count">03 matérias</span>
+      </div>
+      <div class="subject-grid" id="subjectGrid"></div>
+      <div class="notice"><span class="notice-icon">♡</span><p><strong>Um passo de cada vez.</strong><br>Seus materiais ficam organizados por matéria para facilitar a revisão.</p></div>
+    </section>
+
+    <section id="subjectView" class="view hidden">
+      <button class="back-link" id="backHome">← Voltar às matérias</button>
+      <div class="subject-banner">
+        <div class="subject-symbol" id="subjectSymbol">✿</div>
+        <div><p class="eyebrow">MATÉRIA</p><h1 id="subjectTitle"></h1><p id="subjectDescription"></p></div>
+      </div>
+      <div class="tabs">
+        <button class="tab active" data-tab="summaries">Resumos</button>
+        <button class="tab" data-tab="activities">Atividades</button>
+      </div>
+      <div id="subjectSummaries" class="tab-panel">
+        <div class="panel-heading"><div><h2>Materiais de estudo</h2><p>Arquivos disponibilizados para todos os visitantes.</p></div></div>
+        <div id="summaryList" class="summary-list"></div>
+      </div>
+      <div id="subjectActivities" class="tab-panel hidden">
+        <div class="panel-heading"><div><h2>Pratique o que aprendeu</h2><p>Crie questões de revisão neste navegador.</p></div></div>
+        <div class="activity-layout">
+          <form id="questionForm" class="question-form">
+            <h3>Montar uma questão</h3>
+            <label for="questionText">Enunciado</label>
+            <textarea id="questionText" required placeholder="Digite a pergunta..." rows="3"></textarea>
+            <div class="option-fields">
+              <label>Alternativa A<input required id="optA" placeholder="Opção A"></label>
+              <label>Alternativa B<input required id="optB" placeholder="Opção B"></label>
+              <label>Alternativa C<input required id="optC" placeholder="Opção C"></label>
+              <label>Alternativa D<input required id="optD" placeholder="Opção D"></label>
+            </div>
+            <label for="correctAnswer">Resposta correta</label>
+            <select id="correctAnswer"><option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option></select>
+            <label for="explanation">Comentário (opcional)</label>
+            <textarea id="explanation" rows="2" placeholder="Explique por que essa é a resposta correta..."></textarea>
+            <button class="primary-btn" type="submit">Adicionar questão</button>
+            <p class="small-note">As questões criadas aqui ficam salvas somente neste navegador. Para compartilhar com todos, elas precisam ser incluídas no projeto.</p>
+          </form>
+          <div class="question-area"><div class="question-area-head"><h3>Questões desta matéria</h3><span id="questionCount">0 questões</span></div><div id="questionList"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="allSummariesView" class="view hidden">
+      <button class="back-link" id="backHome2">← Voltar ao início</button>
+      <p class="eyebrow">BIBLIOTECA</p><h1 class="page-title">Meus resumos</h1>
+      <p class="page-intro">Encontre os materiais separados por disciplina.</p>
+      <div id="allSummaryList" class="summary-list"></div>
+    </section>
+
+    <section id="allActivitiesView" class="view hidden">
+      <button class="back-link" id="backHome3">← Voltar ao início</button>
+      <p class="eyebrow">REVISÃO</p><h1 class="page-title">Atividades</h1>
+      <p class="page-intro">Escolha uma matéria para criar e revisar questões.</p>
+      <div class="subject-grid compact" id="activitySubjectGrid"></div>
+    </section>
+  </main>
+  <footer><span class="footer-brand">provas.</span><span>Feito para tornar seus estudos mais organizados.</span></footer>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
